@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    @apply bg-beige text-softBrown font-sans antialiased;
+    margin: 0;
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .btn-premium {
+    @apply relative overflow-hidden transition-all duration-500 ease-out;
+  }
+
+  .btn-premium::after {
+    content: '';
+    @apply absolute top-0 -left-[100%] w-full h-full;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: left 0.6s ease-in-out;
+  }
+
+  .btn-premium:hover::after {
+    @apply left-[100%];
+  }
+
+  .gold-shimmer {
+    background: linear-gradient(135deg, #D4AF37 0%, #F5E6AD 50%, #D4AF37 100%);
+    background-size: 200% auto;
+    transition: 0.5s;
+  }
+
+  .gold-shimmer:hover {
+    background-position: right center;
+  }
+}

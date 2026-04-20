@@ -1,0 +1,62 @@
+/* src/pages/ProductPage.css */
+.qty-btn {
+  @apply w-10 h-10 rounded-full flex items-center justify-center border border-softBrown/20 text-softBrown transition-all duration-300 hover:bg-softBrown hover:text-white hover:border-softBrown;
+}
+
+.color-swatch {
+  @apply w-8 h-8 rounded-full border-2 border-transparent cursor-pointer transition-all duration-300 hover:scale-110;
+}
+
+.color-swatch.active {
+  @apply border-goldenYellow ring-2 ring-goldenYellow/20;
+}
+
+.thumbnail-box {
+  @apply w-20 h-20 rounded-lg overflow-hidden border-2 cursor-pointer transition-all duration-300;
+}
+
+.thumbnail-box.active {
+  @apply border-goldenYellow scale-105 shadow-md;
+}
+
+.thumbnail-box:not(.active) {
+  @apply border-transparent opacity-60 hover:opacity-100;
+}
+
+/* Add To Cart Fill Animation */
+.btn-add-to-cart {
+  @apply relative overflow-hidden text-softBrown border border-softBrown py-4 px-8 font-sans font-bold text-xs tracking-widest uppercase transition-all duration-500 z-10;
+}
+
+.btn-add-to-cart::before {
+  content: '';
+  @apply absolute top-0 left-0 w-0 h-full bg-softBrown transition-all duration-500 -z-10;
+}
+
+.btn-add-to-cart:hover::before {
+  @apply w-full;
+}
+
+.btn-add-to-cart:hover {
+  @apply text-white;
+}
+
+/* Buy Now Glow Effect */
+.btn-buy-now {
+  @apply gold-shimmer btn-premium py-4 px-8 font-sans font-bold text-xs tracking-widest uppercase text-white shadow-lg transition-all duration-300 rounded-sm;
+}
+
+.btn-buy-now:hover {
+  @apply shadow-[0_0_20px_rgba(212,175,55,0.6)] scale-[1.02];
+}
+
+/* Sticky Mobile Section */
+@media (max-width: 768px) {
+  .sticky-actions {
+    @apply fixed bottom-0 left-0 w-full bg-white p-4 flex gap-4 shadow-[0_-5px_15px_rgba(0,0,0,0.1)] z-40;
+  }
+}
+
+.skeleton {
+  @apply bg-softBrown/5 animate-pulse rounded-2xl;
+}
