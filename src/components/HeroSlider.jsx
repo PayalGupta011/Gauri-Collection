@@ -3,9 +3,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const slides = [
-  { id: 1, imageUrl: '/hero1.png', alt: 'Chic Fancy Gowns' },
-  { id: 2, imageUrl: '/hero2.png', alt: 'Premium Ethnic Wear' },
-  { id: 3, imageUrl: '/hero3.png', alt: 'Premium Handloom Textiles' },
+  { id: 1, imageUrl: '/slider1.png', alt: 'Premium Collection 1' },
+  { id: 2, imageUrl: '/slider2.png', alt: 'Premium Collection 2' },
+  { id: 3, imageUrl: '/slider3.png', alt: 'Premium Collection 3' },
+  { id: 4, imageUrl: '/slider4.png', alt: 'Premium Collection 4' },
 ];
 
 const slideVariants = {
@@ -36,11 +37,11 @@ const HeroSlider = () => {
     setPage([page + newDirection, newDirection]);
   };
 
-  // Automatic slide changing every 3 seconds
+  // Automatic slide changing every 4 seconds
   useEffect(() => {
     const timer = setInterval(() => {
       paginate(1);
-    }, 3000);
+    }, 4000);
     return () => clearInterval(timer);
   }, [page]);
 
